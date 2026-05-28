@@ -147,23 +147,23 @@ def plot_style(fig, ax_list):
 @st.cache_resource(show_spinner=False)
 def load_nlp_resources():
     import nltk
+
     resources = [
-        ("tokenizers/punkt",                  "punkt"),
-        ("corpora/stopwords",                 "stopwords"),
-        ("corpora/wordnet",                   "wordnet"),
-        ("corpora/omw-1.4",                   "omw-1.4"),
-        ("sentiment/vader_lexicon",           "vader_lexicon"),
-        ("taggers/averaged_perceptron_tagger","averaged_perceptron_tagger"),
+        "stopwords",
+        "wordnet",
+        "omw-1.4",
+        "punkt",
+        "averaged_perceptron_tagger",
+        "vader_lexicon"
     ]
-    for path, pkg in resources:
-        try:
-            nltk.data.find(path)
-        except LookupError:
-            nltk.download(pkg, quiet=True)
+
+    for res in resources:
+        nltk.download(res)
 
     from nltk.corpus import stopwords
     from nltk.stem import WordNetLemmatizer
     from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
     return stopwords, WordNetLemmatizer(), SentimentIntensityAnalyzer()
 
 
@@ -292,7 +292,7 @@ with st.sidebar:
     6. 🗂️ Topic Modelling (LDA)
     """)
     st.markdown("---")
-    st.caption("Mini Project ADBC · 2025")
+    st.caption("Project Analisis Data Tak Terstruktur · 2026")
 
 # ─────────────────────────────────────────────
 # LOAD DATA
