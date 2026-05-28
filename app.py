@@ -148,18 +148,14 @@ def plot_style(fig, ax_list):
 def load_nlp_resources():
     import nltk
 
-    resources = [
-    "stopwords",
-    "wordnet",
-    "omw-1.4",
-    "punkt",
-    "punkt_tab",
-    "averaged_perceptron_tagger",
-    "vader_lexicon"
-]
-
-    for res in resources:
-        nltk.download(res)
+    nltk.download("stopwords")
+    nltk.download("wordnet")
+    nltk.download("omw-1.4")
+    nltk.download("punkt")
+    nltk.download("punkt_tab")
+    nltk.download("averaged_perceptron_tagger")
+    nltk.download("averaged_perceptron_tagger_eng")
+    nltk.download("vader_lexicon")
 
     from nltk.corpus import stopwords
     from nltk.stem import WordNetLemmatizer
