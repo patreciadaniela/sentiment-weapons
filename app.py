@@ -149,13 +149,14 @@ def load_nlp_resources():
     import nltk
 
     resources = [
-        "stopwords",
-        "wordnet",
-        "omw-1.4",
-        "punkt",
-        "averaged_perceptron_tagger",
-        "vader_lexicon"
-    ]
+    "stopwords",
+    "wordnet",
+    "omw-1.4",
+    "punkt",
+    "punkt_tab",
+    "averaged_perceptron_tagger",
+    "vader_lexicon"
+]
 
     for res in resources:
         nltk.download(res)
